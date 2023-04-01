@@ -1,0 +1,206 @@
+/* ## Colors
+
+### Primary
+
+- Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%) */
+
+
+/* font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@800&family=Montserrat:wght@500;700&display=swap');
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+
+    /* ### variables for color */
+
+--Dark_cyan: hsl(158, 36%, 37%);
+--Cream: hsl(30, 38%, 92%);
+
+--Very_dark_blue: hsl(212, 21%, 14%);
+--Dark_grayish_blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+
+}
+
+body{
+    font-family:'Montserrat', serif;
+    font-size: 1.4rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Cream);
+    color: var(--Dark_grayish_blue);
+}
+
+.container{
+    width: 80%;
+    max-width: 134rem;
+    height: auto;
+}
+.card{
+    max-width: 540px;
+    min-width: 330px;
+    width: 40vw;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.15);
+}
+.card-img{
+    width: 50%;
+    background: url('./images/image-product-desktop.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 0 0 1rem ;
+
+}
+.card-content{
+    width: 50%;
+    padding: 2rem;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--White);
+}
+
+.card-content h1{
+    font-size: 1.4rem;
+    letter-spacing: 0.25em;
+    font-weight: 800;
+    margin: 1em 0;
+}
+
+.card-content h2{
+    font-family:'Fraunces' ;
+    font-weight: 800;
+    font-size: 3rem;
+    text-transform: capitalize;
+    color: var(--Very_dark_blue);
+    margin-bottom: 2rem;
+}
+
+.card-content p{
+    font-size: 1.3rem;
+    line-height: 2.25rem;
+}
+
+.price{
+    height: 4rem;
+    line-height: 4rem;
+    margin: 1em 0;
+}
+
+.price h2{
+    color: var(--Dark_cyan);
+    display: inline;
+    vertical-align: middle;
+}
+
+.price p{
+    display: inline;
+    margin-left: 1em;
+    text-decoration: line-through;
+    vertical-align: middle;
+}
+
+.btn-cart{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    color: var(--White);
+    background-color: var(--Dark_cyan);
+    width: 100%;
+    padding: 1em 0;
+    border-radius: 0.75rem;
+}
+
+.btn-cart::before{
+    content: url('./images/icon-cart.svg');
+    font-size: 1.4rem;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.btn-cart:hover{
+    background: hsl(158, 43%, 23%) ;
+}
+
+.btn-cart:active{
+    transform: translateY(2px);
+}
+
+/* media queries */
+/* for less than 1200px */
+@media screen and (max-width:1200px) and (min-width:1093px) {
+    html{
+        font-size:56.25%;
+    }
+}
+/* for less than 1092px */
+@media screen and  (max-width:1092px) and (min-width:991px)  {
+    html{
+        font-size:50%;
+    }
+}
+/* for less than 990px */
+@media screen and (max-width:990px) and (min-width:769px) {
+    html{
+        font-size: 43.75%;
+    }
+}
+@media screen and  (max-width:768px) and (min-width:426px){
+    html{
+        font-size: 50%;
+    }
+    .card{
+        flex-direction: column;
+        min-width: 320px;
+    }
+    .card-img{
+        width: 100%;
+        height: 38rem;
+        background: url(./images/image-product-mobile.jpg)  no-repeat contain ;
+        background-position: 50% 0;
+    }
+    .card-content{
+        width: 100%;
+        height: auto;
+    }
+}
+@media screen and  (max-width:425px){
+    html{
+        font-size: 43.75%;
+    }
+    .card{
+        flex-direction: column;
+        min-width: 250px;
+    }
+    .card-img{
+        width: 100%;
+        height: 38rem;
+        background: url(./images/image-product-mobile.jpg)  no-repeat contain ;
+        background-position: 50% 0;
+    }
+    .card-content{
+        width: 100%;
+        height: auto;
+    }
+}
